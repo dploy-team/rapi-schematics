@@ -2,8 +2,8 @@ import { Action, createReducer, on } from "@ngrx/store";
 import { W3MetaPagination } from "@dploy-team/rapi-w3";
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 import {
-  loadModules/users,
-  loadModules/usersSuccess,
+  loadUsers,
+  loadUsersSuccess,
   createUserSuccess,
   updateUserSuccess,
   deleteUserSuccess,
@@ -35,14 +35,14 @@ export const initialState: UserState = UserAdapter.getInitialState({
 const UserReducer = createReducer(
   initialState,
 
-  on(loadModules/users, (state, action) => {
+  on(loadUsers, (state, action) => {
     return {
       ...state,
       loading: true,
       search: action.params
     };
   }),
-  on(loadModules/usersSuccess, (state, action) => {
+  on(loadUsersSuccess, (state, action) => {
     return {
       ...state,
       entities: action.data,

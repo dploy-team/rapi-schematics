@@ -18,10 +18,6 @@ import { parseName } from "@schematics/angular/utility/parse-name";
 // per file.
 export function feature(options: FeatureSchema): Rule {
   return (tree: Tree, _context: SchematicContext) => {
-    if (!options.pluralName) {
-      options.pluralName = options.name + "s";
-    }
-
     const workspaceBuffer = tree.read("angular.json");
     if (!workspaceBuffer) {
       throw new SchematicsException("Not an angular CLI workspace");
@@ -35,9 +31,12 @@ export function feature(options: FeatureSchema): Rule {
     const parsedPath = parseName(defaultProjectPath, options.name);
 
     const { name, path } = parsedPath;
-
     const sourceTemplates = url("./files");
 
+    options.name = name;
+    if (!options.pluralName) {
+      options.pluralName = options.name + "s";
+    }
     const sourceParametrizedTemplates = apply(sourceTemplates, [
       template({
         ...options,

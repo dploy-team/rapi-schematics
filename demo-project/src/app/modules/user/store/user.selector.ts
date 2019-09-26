@@ -5,12 +5,12 @@ import { UserModel } from "./user.model";
 
 export const getUserState = createFeatureSelector<UserState>("User");
 
-export const getModules/users = createSelector(
+export const getUsers = createSelector(
   getUserState,
   (state: UserState) => state.entities
 );
 
-export const getModules/usersArr = createSelector(
+export const getUsersArr = createSelector(
   getUser,
   entities => Object.keys(entities).map(id => entities[id])
 );
@@ -25,9 +25,9 @@ export const getIsLoadingUser = createSelector(
   (state: UserState) => state.loading
 );
 
-export const getModules/usersArrWithPagination = createSelector(
+export const getUsersArrWithPagination = createSelector(
   getUserState,
-  getModules/usersArr,
+  getUsersArr,
   (state, entities) => {
     return {
       pagination: state.pagination,

@@ -1,13 +1,13 @@
 import { createAction, props } from "@ngrx/store";
 import { W3MetaPagination } from "@dploy-team/rapi-w3";
 
-export const loadModules/users = createAction(
-    "[User] Load Modules/users",
+export const loadUsers = createAction(
+    "[User] Load Users",
     props<{ params: any }>()
 );
 
-export const loadModules/usersSuccess = createAction(
-    "[User] Load Modules/users Success",
+export const loadUsersSuccess = createAction(
+    "[User] Load Users Success",
     props<{ data: any; pagination: W3MetaPagination }>()
 );
 

@@ -45,6 +45,10 @@ export function store(options: StoreSchema): Rule {
       }),
       move(path)
     ]);
+    options.name = name;
+    if (!options.pluralName) {
+      options.pluralName = options.name + "s";
+    }
     return mergeWith(sourceParametrizedTemplates)(tree, _context);
   };
 }

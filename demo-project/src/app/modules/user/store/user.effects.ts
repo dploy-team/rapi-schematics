@@ -9,13 +9,13 @@ import { UserApiService } from "./user-api.service";
 export class UserEffects {
   constructor(private actions$: Actions, private api: UserApiService) {}
 
-  loadModules/users$ = createEffect(() =>
+  loadUsers$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(UserActions.loadModules/users),
+      ofType(UserActions.loadUsers),
       concatMap(action =>
         this.api.search(action.params).pipe(
           map(data => {
-            return UserActions.loadModules/usersSuccess({
+            return UserActions.loadUsersSuccess({
               data: data,
               pagination: this.api.paginationData
             });

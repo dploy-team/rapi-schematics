@@ -5,6 +5,11 @@
       "description": "Redux Store schematic.",
       "factory": "./store/index#store",
       "schema": "./store/schema.json"
+    },
+    "feature": {
+      "description": "Feature schematic.",
+      "factory": "./feature/index#feature",
+      "schema": "./feature/schema.json"
     }
   }
 }

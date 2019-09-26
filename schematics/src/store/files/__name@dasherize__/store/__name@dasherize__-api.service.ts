@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "@env/environment";
-import { W3AbstractRequestService } from "@dploy-rapi/w3";
+import { W3AbstractRequestService } from "@dploy-team/rapi-w3";
 import { <%= classify(name) %>Model } from "./<%= dasherize(name) %>.model";
 
 @Injectable()

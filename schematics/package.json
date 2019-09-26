@@ -1,7 +1,10 @@
 {
-  "name": "schematics",
-  "version": "0.0.0",
-  "description": "A blank schematics",
+  "name": "@dploy-team/rapi-schematics",
+  "version": "1.0.1",
+  "description": "Angular Schematics",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "watch": "tsc -p tsconfig.json --watch",

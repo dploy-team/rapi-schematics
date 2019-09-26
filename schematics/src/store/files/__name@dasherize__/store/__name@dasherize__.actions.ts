@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { W3MetaPagination } from "@dploy-rapi/w3";
+import { W3MetaPagination } from "@dploy-team/rapi-w3";
 
 export const load<%= classify(pluralName) %> = createAction(
     "[<%= classify(name) %>] Load <%= classify(pluralName) %>",

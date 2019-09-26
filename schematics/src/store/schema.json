@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "StoreSchematics",
+  "title": "Store Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the feature",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the feature name?"
+    },
+    "pluralName": {
+      "type": "string",
+      "description": "Plural name of the feature (empty to add a 's')"
+    },
+    "project": {
+      "type": "string",
+      "description": "The project to create the files (default: angular.json default project)"
+    }
+  },
+  "required": ["name"]
+}

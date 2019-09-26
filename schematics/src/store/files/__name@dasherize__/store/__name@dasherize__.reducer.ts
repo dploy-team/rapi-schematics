@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { W3MetaPagination } from "@dploy-rapi/w3";
+import { W3MetaPagination } from "@dploy-team/rapi-w3";
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 import {
   load<%= classify(pluralName) %>,

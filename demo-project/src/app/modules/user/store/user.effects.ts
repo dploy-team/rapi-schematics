@@ -30,7 +30,7 @@ export class UserEffects {
     this.actions$.pipe(
       ofType(UserActions.createUser),
       concatMap(action =>
-        this.api.create(action.User).pipe(
+        this.api.save(action.User).pipe(
           map(data => {
             return UserActions.createUserSuccess({
                 User: data,
@@ -62,9 +62,9 @@ export class UserEffects {
     this.actions$.pipe(
       ofType(UserActions.deleteUser),
       concatMap(action =>
-        this.api.delete(action.id).pipe(
+        this.api.remove(action.id).pipe(
           map(data => {
-            return UserActions.deleteUserSuccess({});
+            return UserActions.deleteUserSuccess({id: action.id});
           }),
           catchError(error => of(UserActions.UserFailure({ error })))
         )

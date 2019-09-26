@@ -7,7 +7,7 @@ import { UserModel } from "./user.model";
 @Injectable()
 export class UserApiService extends W3AbstractRequestService<UserModel>{
     
-    constructor(private http: HttpClient){
+    constructor(protected http: HttpClient){
         super(http)
     }
 

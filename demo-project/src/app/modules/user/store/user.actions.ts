@@ -38,7 +38,7 @@ export const deleteUser = createAction(
 
 export const deleteUserSuccess = createAction(
     "[User] Delete User Success",
-    props<{ }>()
+    props<{ id: number }>()
 );
 
 export const UserFailure = createAction(

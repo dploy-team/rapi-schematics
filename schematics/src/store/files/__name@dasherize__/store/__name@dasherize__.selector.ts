@@ -1,6 +1,6 @@
 import { createSelector, createFeatureSelector } from "@ngrx/store";
 import { <%= classify(name) %>State } from "./<%= dasherize(name) %>.reducer";
-import { EntitiesArrWithPaginationType } from "@dploy-rapi/piece";
+import { EntitiesArrWithPaginationType } from "@dploy-team/rapi-piece";
 import { <%= classify(name) %>Model } from "./<%= dasherize(name) %>.model";
 
 export const get<%= classify(name) %>State = createFeatureSelector<<%= classify(name) %>State>("<%= classify(name) %>");
@@ -11,7 +11,7 @@ export const get<%= classify(pluralName) %> = createSelector(
 );
 
 export const get<%= classify(pluralName) %>Arr = createSelector(
-  get<%= classify(name) %>,
+  get<%= classify(pluralName) %>,
   entities => Object.keys(entities).map(id => entities[id])
 );
 

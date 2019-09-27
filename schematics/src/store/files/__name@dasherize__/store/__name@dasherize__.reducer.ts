@@ -4,6 +4,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 import {
   load<%= classify(pluralName) %>,
   load<%= classify(pluralName) %>Success,
+  find<%= classify(name) %>Success,
   create<%= classify(name) %>Success,
   update<%= classify(name) %>Success,
   delete<%= classify(name) %>Success,
@@ -48,6 +49,13 @@ const <%= classify(name) %>Reducer = createReducer(
       entities: action.data,
       pagination: action.pagination,
       loading: false
+    };
+  }),
+  on(find<%= classify(name) %>Success, (state, action) => {
+    return {
+      ...state,
+      loading: false,
+      current<%= classify(name) %>: action.<%= classify(name) %>
     };
   }),
   on(create<%= classify(name) %>Success, (state, action) => {

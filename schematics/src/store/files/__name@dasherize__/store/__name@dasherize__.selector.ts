@@ -25,6 +25,11 @@ export const getIsLoading<%= classify(name) %> = createSelector(
   (state: <%= classify(name) %>State) => state.loading
 );
 
+export const getCurrent<%= classify(name) %> = createSelector(
+  get<%= classify(name) %>State,
+  (state: <%= classify(name) %>State) => state.current<%= classify(name) %>
+);
+
 export const get<%= classify(pluralName) %>ArrWithPagination = createSelector(
   get<%= classify(name) %>State,
   get<%= classify(pluralName) %>Arr,

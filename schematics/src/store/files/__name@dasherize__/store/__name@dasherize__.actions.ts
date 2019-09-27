@@ -11,6 +11,16 @@ export const load<%= classify(pluralName) %>Success = createAction(
     props<{ data: any; pagination: W3MetaPagination }>()
 );
 
+export const find<%= classify(name) %> = createAction(
+    "[<%= classify(name) %>] Find <%= classify(name) %>",
+    props<{ id: number, params: any }>()
+);
+
+export const find<%= classify(name) %>Success = createAction(
+    "[<%= classify(name) %>] Find <%= classify(name) %> Success",
+    props<{ <%= classify(name) %>: any }>()
+);
+
 export const create<%= classify(name) %> = createAction(
     "[<%= classify(name) %>] Create <%= classify(name) %>",
     props<{ <%= classify(name) %>: any }>()

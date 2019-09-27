@@ -26,6 +26,22 @@ export class <%= classify(name) %>Effects {
     )
   );
 
+  find<%= classify(name) %>$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(<%= classify(name) %>Actions.find<%= classify(name) %>),
+      concatMap(action =>
+        this.api.find(action.id, action.params).pipe(
+          map(data => {
+            return <%= classify(name) %>Actions.find<%= classify(name) %>Success({
+                <%= classify(name) %>: data,
+            });
+          }),
+          catchError(error => of(<%= classify(name) %>Actions.<%= classify(name) %>Failure({ error })))
+        )
+      )
+    )
+  );
+
   create<%= classify(name) %>$ = createEffect(() =>
     this.actions$.pipe(
       ofType(<%= classify(name) %>Actions.create<%= classify(name) %>),
